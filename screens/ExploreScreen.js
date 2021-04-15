@@ -15,7 +15,7 @@ export function OrderScreen(props) {
   const [selectedValue, setSelectedValue] = useState("java");
   return (
     <View style={Head}>
-      <Text style={{ fontFamily: 'Kanit-Bold', fontSize: 25, marginLeft: 10,marginTop: 20 }}>ตะกร้าสินค้าของคุณ</Text>
+      <Text style={{ fontFamily: 'Kanit-Bold', fontSize: 25,alignSelf: 'center',marginTop: 20 }}>ตะกร้าสินค้าของคุณ</Text>
       <ScrollView>
         <View style={Body}>
 
@@ -26,15 +26,20 @@ export function OrderScreen(props) {
           </View>
 
           <View style={containerStyle}>
-            <Text style={{ marginTop: 5, fontSize: 20, fontWeight: 'bold' }}>ราคา                                        ฿50</Text>
+            <Text style={{ marginTop: 5, fontSize: 20, fontWeight: 'bold' }}>ราคา                                        ฿57</Text>
             <Text style={{ marginTop: 5, fontSize: 20, fontWeight: 'bold' }}>ค่าจัดส่ง                                  ฟรี</Text>
-            <Text style={{ marginTop: 5, fontSize: 20, fontWeight: 'bold' }}>ค่าบริการ                                ฿12</Text>
+            <Text style={{ marginTop: 5, fontSize: 20, fontWeight: 'bold' }}>ค่าบริการ                                ฿5</Text>
             <Text style={{ marginTop: 5, fontSize: 20, fontWeight: 'bold' }}>รหัสส่วนลด  </Text>
             <TextInput
               multiline
               style={styles.input}
               placeholder='รหัสส่วนลด (ถ้ามี)'
               onChangeText={(val) => Setname(val)} />
+              <Button
+              title="ใช้"
+              color="tomato"
+              onPress={() => { props.navigation.navigate() }}
+            />  
             <Text style={{ marginTop: 5, fontSize: 20, fontWeight: 'bold' }}>ยอดรวมสุทธิ                             ฿62</Text>
 
             <Button
@@ -142,8 +147,9 @@ const styles = {
   input: {
     borderWidth: 1,
     borderColor: '#777',
+    alignSelf: 'center',
     padding: 8,
-    margin: 20,
+    margin: 10,
     width: 300
   },
   container: {

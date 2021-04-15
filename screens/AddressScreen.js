@@ -14,7 +14,7 @@ export function AddressScreen(props) {
   const [phone, Setphone] = useState('0822891747');
   return (
     <View style={Head}>
-      <Text style={{ fontFamily: 'Kanit-Bold', fontSize: 25, marginTop: 20,marginLeft: 10 }}>รายละเอียดการจัดส่ง</Text>
+      <Text style={{ fontFamily: 'Kanit-Bold', fontSize: 25, marginTop: 20,alignSelf: 'center' }}>รายละเอียดการจัดส่ง</Text>
       <ScrollView>
         <View style={Body}>
         </View>

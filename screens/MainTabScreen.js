@@ -18,7 +18,7 @@ import {View} from 'react-native-animatable';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import CardListScreen from './CardListScreen';
 import CardItemDetails from './CardItemDetails';
-import CardOrderDetails from './CardOrderDetails';
+import OrderingScreen from './OrderingScreen';
 import { FoodOrderScreen } from './FoodOrderScreen';
 import ExploreScreen from './ExploreScreen';
 
@@ -199,6 +199,17 @@ const HomeStackScreen = ({navigation}) => {
         <HomeStack.Screen 
         name="ExploreScreen"
         component={ExploreScreen}
+        options={({route}) => ({
+          // title: route.params.title,
+          headerBackTitleVisible: false,
+          headerTitle: false,
+          headerTransparent: true,
+          headerTintColor: '#fff'
+        })}
+        />
+        <HomeStack.Screen 
+        name="OrderScreen"
+        component={OrderingScreen}
         options={({route}) => ({
           // title: route.params.title,
           headerBackTitleVisible: false,

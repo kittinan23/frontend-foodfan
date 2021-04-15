@@ -54,7 +54,7 @@ export function CheckbillScreen(props) {
           <Button
             title="สั่งออเดอร์"
             color="tomato"
-            onPress={() => { props.navigation.navigate('Home') }}
+            onPress={() => { props.navigation.navigate('OrderScreen') }}
           />
         </View>
         

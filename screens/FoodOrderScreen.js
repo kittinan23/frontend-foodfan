@@ -15,7 +15,7 @@ export class FoodOrderScreen extends React.Component {
         this.state = {
             quantity: 1,
             static_stdPrice: 50,
-            stdPrice: 50,
+            stdPrice: 40,
             orderPrice: 50,
             boxChecked: false,
             radioChecked: '',
@@ -198,7 +198,7 @@ export class FoodOrderScreen extends React.Component {
                             <Text style={{ fontFamily: 'Kanit-Bold', fontSize: 25, marginLeft: 10 }}>ข้าวกะเพราหมูสับ</Text>
                             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                 {/* <Ionicons name='ios-restaurant' size={18} /> */}
-                                <Text style={{ fontFamily: 'Kanit-Regular' }}>ร้านสตางค์ อาหารตามสั่ง</Text>
+                                <Text style={{ fontFamily: 'Kanit-Regular' }}>ร้านชาคุมะ ปากพนัง</Text>
                             </View>
                         </View>
                         <Text style={[styles.menuTitle, { position: 'absolute', right: 0 }]}>{this.state.stdPrice} บาท</Text>
