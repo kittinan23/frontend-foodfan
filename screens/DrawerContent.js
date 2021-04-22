@@ -87,7 +87,7 @@ export function DrawerContent(props) {
                                 size={size}
                                 />
                             )}
-                            label="Bookmarks"
+                            label="Order"
                             onPress={() => {props.navigation.navigate('BookmarkScreen')}}
                         />
                         <DrawerItem 

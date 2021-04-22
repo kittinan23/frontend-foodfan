@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, TextInput, Button, Picker ,SafeAreaView } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
-export function OrderScreen(props) {
+import DropDownPicker from 'react-native-dropdown-picker';
+export function BucketScreen({ route, navigation }) {
   const {
     Head,
     Body,
@@ -13,6 +13,7 @@ export function OrderScreen(props) {
   const [name, Setname] = useState('kittinan');
   const [phone, Setphone] = useState('0822891747');
   const [selectedValue, setSelectedValue] = useState("java");
+  const {price} = route.params;
   return (
     <SafeAreaView style={styles.mainContainer}>
                 <View style={styles.mainHeaderContainer}>
@@ -32,7 +33,7 @@ export function OrderScreen(props) {
           </View>
 
           <View style={containerStyle}>
-            <Text style={{ marginTop: 5, fontSize: 20, fontWeight: 'bold' }}>ราคา                                        ฿57</Text>
+            <Text style={{ marginTop: 5, fontSize: 20, fontWeight: 'bold' }}>ราคา                                       ฿{JSON.stringify(price)}</Text>
             <Text style={{ marginTop: 5, fontSize: 20, fontWeight: 'bold' }}>ค่าจัดส่ง                                  ฟรี</Text>
             <Text style={{ marginTop: 5, fontSize: 20, fontWeight: 'bold' }}>ค่าบริการ                                ฿5</Text>
             <Text style={{ marginTop: 5, fontSize: 20, fontWeight: 'bold' }}>รหัสส่วนลด  </Text>
@@ -46,12 +47,12 @@ export function OrderScreen(props) {
               color="tomato"
               onPress={() => { props.navigation.navigate() }}
             />  
-            <Text style={{ marginTop: 5, fontSize: 20, fontWeight: 'bold' }}>ยอดรวมสุทธิ                             ฿62</Text>
+            <Text style={{ marginTop: 5, fontSize: 20, fontWeight: 'bold' }}>ยอดรวมสุทธิ                         ฿{JSON.stringify(price+5)}</Text>
 
             <Button
               title="เพิ่มรายการสั่งซื้อ"
               color="tomato"
-              onPress={() => { props.navigation.navigate('MenuBack') }}
+              onPress={() => { navigation.navigate('MenuBack') }}
             />
             <Text style={{ marginTop: 5, fontSize: 20, fontWeight: 'bold' }}>เวลาจัดส่ง  </Text>
 
@@ -78,7 +79,7 @@ export function OrderScreen(props) {
             <Button
               title="ถัดไป"
               color="tomato"
-              onPress={() => { props.navigation.navigate('AddressScreen') }}
+              onPress={() => { navigation.navigate('AddressScreen') }}
             />
           </View>
         </View>
@@ -88,7 +89,7 @@ export function OrderScreen(props) {
   );
 };
 
-export default OrderScreen;
+export default BucketScreen;
 
 const styles = {
   containerStyle: {

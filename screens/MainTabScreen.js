@@ -19,9 +19,11 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import CardListScreen from './CardListScreen';
 import CardItemDetails from './CardItemDetails';
 import OrderingScreen from './OrderingScreen';
+import {OrderListScreen} from './OrderListScreen';
 import { FoodOrderScreen } from './FoodOrderScreen';
+import  {MainOrderListDetailScreen}  from './MainOrderListDetailScreen';
 import ExploreScreen from './ExploreScreen';
-
+import BucketScreen from './BucketScreen';
 const HomeStack = createStackNavigator();
 const NotificationStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
@@ -41,7 +43,7 @@ const MainTabScreen = () => (
         ),
       }}
     />
-    {/* <Tab.Screen
+    <Tab.Screen
       name="Notifications"
       component={NotificationStackScreen}
       options={{
@@ -51,10 +53,10 @@ const MainTabScreen = () => (
           <Icon name="ios-notifications" color={color} size={26} />
         ),
       }}
-    /> */}
-    <Tab.Screen
+    />
+    {/* <Tab.Screen
       name="Order"
-      component={ExploreScreen}
+      component={BucketScreen}
       options={{
         tabBarLabel: 'Order',
         tabBarColor: '#FF6347',
@@ -62,7 +64,7 @@ const MainTabScreen = () => (
           <Icon name="ios-aperture" color={color} size={26} />
         ),
       }}
-    />
+    /> */}
     <Tab.Screen
       name="Profile"
       component={ProfileStackScreen}
@@ -197,8 +199,8 @@ const HomeStackScreen = ({navigation}) => {
         })}
         />
         <HomeStack.Screen 
-        name="ExploreScreen"
-        component={ExploreScreen}
+        name="BucketScreen"
+        component={BucketScreen}
         options={({route}) => ({
           // title: route.params.title,
           headerBackTitleVisible: false,
@@ -235,18 +237,11 @@ const NotificationStackScreen = ({navigation}) => (
     }}>
     <NotificationStack.Screen
       name="Order"
-      component={FoodOrderScreen}
-      options={{
-        headerLeft: () => (
-          <Icon.Button
-            name="ios-menu"
-            size={25}
-            backgroundColor="#FF6347"
-            onPress={() => navigation.openDrawer()}
-          />
-        ),
-      }}
-    />
+      component={OrderListScreen}/>
+      <NotificationStack.Screen
+        name="OrderDetail"
+        component={MainOrderListDetailScreen}
+      />
   </NotificationStack.Navigator>
 );
 

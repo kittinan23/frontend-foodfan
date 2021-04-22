@@ -10,6 +10,7 @@ export function AddressScreen(props) {
     containerStyle2,
     closeButtonStyle,
     checkoutButtonStyle } = styles;
+    const [address, Setaddress] = useState('หอพัก 5 ลักษณานิเวศ'); 
   const [name, Setname] = useState('kittinan');
   const [phone, Setphone] = useState('0822891747');
   return (
@@ -24,29 +25,29 @@ export function AddressScreen(props) {
           <TextInput
             multiline
             style={styles.input}
-            placeholder=''
-            onChangeText={(val) => Setname(val)} />
+            placeholder='หอพัก 5 ลักษณานิเวศ'
+            onChangeText={(val) => Setaddress(val)} />
 
           <View style={styles.container}>
             <Text style={{ fontFamily: 'Kanit-Bold', fontSize: 15, marginLeft: 10 }}> ชื่อของท่าน* : </Text>
             <TextInput
               multiline
               style={styles.input}
-              placeholder='e.g.Kittinan Thongorn'
+              placeholder='Kittinan Thongorn'
               onChangeText={(val) => Setname(val)} />
 
             <Text style={{ fontFamily: 'Kanit-Bold', fontSize: 15, marginLeft: 10 }}> หมายเลขโทรศัพท์* : </Text>
             <TextInput
               multiline
               style={styles.input}
-              placeholder='e.g.0822891747'
-              onChangeText={(val) => Setname(val)} />
+              placeholder='0822891747'
+              onChangeText={(val) => Setphone(val)} />
 
             <Text style={{ fontFamily: 'Kanit-Bold', fontSize: 15, marginLeft: 10 }}> อีเมล (ถ้ามี) : </Text>
             <TextInput
               multiline
               style={styles.input}
-              placeholder=''
+              placeholder='th.kittinan@hotmail.com'
               onChangeText={(val) => Setname(val)} />
 
             <Text style={{ fontFamily: 'Kanit-Bold', fontSize: 15, marginLeft: 10 }}> ข้อมูลเพิ่มเติม (ถ้ามี) : </Text>
@@ -136,6 +137,7 @@ const styles = {
     borderColor: '#777',
     padding: 8,
     margin: 10,
-    width: 375
+    width: 375,
+    color: '#363636',
   }
 };

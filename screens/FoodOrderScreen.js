@@ -181,12 +181,13 @@ export class FoodOrderScreen extends React.Component {
 
 
     render() {
-        const { navigate } = this.props.navigation;
+        const { stdPrice } = this.state;
+        // const { navigate } = this.props.navigation;
         return (
             <SafeAreaView style={styles.mainContainer}>
                 <View style={styles.mainHeaderContainer}>
                     <TouchableOpacity onPress={() => { this.props.navigation.goBack() }}>
-                        <Ionicons name='back icon' size={30} style={{ color: 'rgba(150, 150, 150, 1)', marginTop: 5 }} />
+                        <Ionicons name='chevron-back-outline' size={30} style={{ color: 'rgba(150, 150, 150, 1)', marginTop: 5 }} />
                     </TouchableOpacity>
                 </View>
                 <View style={styles.mainBodyContainer}>
@@ -219,13 +220,23 @@ export class FoodOrderScreen extends React.Component {
                 </View>
                 <View style={styles.orderBtnContainer}>
                     <TouchableOpacity style={styles.quantityBtn} onPress={() => { this.removeQuantity() }}>
-                        <Ionicons name='remove-outline' size={30} style={styles.iconDetail} />
+                        <Ionicons name='md-remove' size={30} style={styles.iconDetail} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.orderBtn]}onPress={() => navigate('ExploreScreen')}>
-                        <Text style={{ fontFamily: 'Kanit-Regular' }}>เพิ่มไปยังตะกร้า x {this.state.quantity}</Text>
-                    </TouchableOpacity>
+
+                    {/* <TouchableOpacity style={[styles.orderBtn]}onPress={() => this.props.navigation.navigate('BucketScreen')}> */}
+                    <Button
+                        title="เพิ่มไปยังตะกร้า" 
+                        color="tomato"
+                        onPress={() =>
+                            this.props.navigation.navigate('BucketScreen', {
+                                price: stdPrice,
+                            })
+                        }
+                    />
+                    {/* <Text style={{ fontFamily: 'Kanit-Regular' }}>เพิ่มไปยังตะกร้า x {this.state.quantity}</Text>
+                    </TouchableOpacity> */}
                     <TouchableOpacity style={styles.quantityBtn} onPress={() => { this.addQuantity() }}>
-                        <Ionicons name="add-outline" size={30} style={styles.iconDetail} />
+                        <Ionicons name="md-add" size={30} style={styles.iconDetail} />
 
                     </TouchableOpacity>
                 </View>

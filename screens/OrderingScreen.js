@@ -49,7 +49,7 @@ export function OrderScreen(props) {
             
 
             <Button
-              title="ถัดไป"
+              title="กลับสู่หน้าหลัก"
               color="tomato"
               onPress={() => { props.navigation.navigate('Home') }}
             />
